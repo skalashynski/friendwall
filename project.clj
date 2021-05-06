@@ -8,6 +8,7 @@
                  [compojure "1.6.2"]
                  [ring/ring-defaults "0.3.2"]
                  [yogthos/config "1.1.7"]
+                 [rum "0.11.4"]
                  ]
   :repl-options {:init-ns friendwall.core}
   :main friendwall.core
