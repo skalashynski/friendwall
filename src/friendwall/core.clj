@@ -1,7 +1,9 @@
 (ns friendwall.core
   (:require [ring.adapter.jetty :refer [run-jetty]]
             [compojure.core :refer :all]
-            [compojure.route :as route])
+            [compojure.route :as route]
+            [ring.middleware.defaults :refer :all]
+            )
   (:gen-class))
 
 (defroutes app
@@ -19,6 +21,6 @@
 (defn -main
   "I don't do a whole lot."
   [& args]
-  (run-jetty app  {:port 80})
+  (run-jetty (wrap-defaults app site-defaults) {:port 80})
 
   )

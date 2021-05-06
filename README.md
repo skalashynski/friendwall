@@ -1,6 +1,7 @@
 # friendwall
 
-A Clojure library designed to ... well, that part is up to you.
+Copied from
+https://www.youtube.com/watch?v=0fmkf3slfsw
 
 ## Usage
 
