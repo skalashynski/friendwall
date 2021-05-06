@@ -2,7 +2,8 @@
   (:require [ring.adapter.jetty :refer [run-jetty]]
             [compojure.core :refer :all]
             [compojure.route :as route]
-            [ring.middleware.defaults :refer :all]
+            [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
+            [config.core :refer [env]]
             )
   (:gen-class))
 
@@ -21,6 +22,6 @@
 (defn -main
   "I don't do a whole lot."
   [& args]
-  (run-jetty (wrap-defaults app site-defaults) {:port 80})
+  (run-jetty (wrap-defaults app site-defaults) {:port (:port env)})
 
   )
